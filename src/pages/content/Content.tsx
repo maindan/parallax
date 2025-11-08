@@ -27,14 +27,14 @@ export default function Content({ scrollContainer }: ContentProps) {
 
     tl.fromTo(
       bgRef.current,
-      { clipPath: "inset(20%)" },
+      { clipPath: window.innerWidth < 800 ? "inset(15%)":"inset(20%)" },
       { clipPath: "inset(0%)", ease: "none" }
     );
 
     tl.fromTo(
       photoRef.current,
-      { width: window.innerWidth < 800 ? "40%" : "15%" },
-      { width: window.innerWidth < 800 ? "50%" : "20%" }
+      { width: window.innerWidth < 800 ? "50%" : "15%" },
+      { width: window.innerWidth < 800 ? "60%" : "20%" }
     )
 
     return () => {
@@ -46,13 +46,13 @@ export default function Content({ scrollContainer }: ContentProps) {
   return (
     <div className="h-full w-full bg-black" ref={containerRef}>
       <div
-        className="w-full h-screen relative flex items-center justify-center mt-40"
+        className="w-full h-[80vh] sm:h-screen relative flex items-center justify-center mt-40"
       >
         <img
           src="sky.jpg"
           alt=""
           ref={bgRef}
-          className="h-[160vh] w-full object-cover absolute"
+          className="h-[120vh] sm:h-[160vh] w-full object-cover absolute"
         />
         <img
           src="woman.jpg"
@@ -70,7 +70,7 @@ export default function Content({ scrollContainer }: ContentProps) {
           PHOTOGRAPH
         </h2>
       </div>
-      <div className="w-full h-[120vh] sm:h-[140vh] pt-[40vh]">
+      <div className="w-full h-[120vh] sm:h-[140vh] pt-[20vh] sm:pt-[40vh]">
         <div className="w-full flex items-center justify-center mb-4">
           <span className="text-white text-5xl sm:text-6xl text-center">HIGHLIGHTS</span>
         </div>
@@ -78,7 +78,7 @@ export default function Content({ scrollContainer }: ContentProps) {
           {photos.map((photo: string, i: number) => (
             <div
               key={i}
-              className="min-w-[90%] w-[90%] sm:min-w-[30%] sm:w-[30%] h-[90%] sm:h-[60%] flex items-center justify-center overflow-hidden shadow-lg bg-black hover:scale-[1.02] transition-all ease-in-out"
+              className="min-w-[90%] w-[90%] sm:min-w-[30%] sm:w-[30%] h-[70%] sm:h-[60%] flex items-center justify-center overflow-hidden shadow-lg bg-black hover:scale-[1.02] transition-all ease-in-out my-auto sm:m-0"
             >
               <img
                 src={photo}
