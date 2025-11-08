@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  font-family: "Momo Trust Display", sans-serif;
+}
+
 
 html, body, #root {
     width: 100%;
