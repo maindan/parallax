@@ -48,7 +48,6 @@ function AnimatedTextBehavior({
           start: '0px bottom',
           end: 'bottom +=400px bottom',
           scrub: true,
-          markers: true,
         },
         x: -200,
         opacity: 0,
